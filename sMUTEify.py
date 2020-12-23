@@ -7,19 +7,24 @@ WHEN PUTTING ON GITHUB, DON'T SHOW CLIENT ID, SECRET, AND ACCESS TOKEN PUBLICLY
 '''
 import requests
 import spotipy.util as util
-CLIENT_ID = 'yourclientid'   #hidden for privacy
-CLIENT_SECRET = 'yourclientsecret'  #hidden for privacy
-username = 'yourusername'   #hidden for privacy 
+CLIENT_ID = 'a455f73c6eac46428cb7f35d75e842f8'
+CLIENT_SECRET = '9bf9b5fce0b147dca5adb1758711e85d'
+username = 'Ahsan Kaleem' 
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-currently-playing'
-access_token = util.prompt_for_user_token(username=username, 
+def is_song_playing():
+    global CLIENT_ID, CLIENT_SECRET, username, redirect_uri, scope
+    access_token = util.prompt_for_user_token(username=username, 
                                    scope=scope, 
                                    client_id=CLIENT_ID,   
                                    client_secret=CLIENT_SECRET,     
                                    redirect_uri=redirect_uri)
-headers = {
+    headers = {
     'Authorization': 'Bearer {token}'.format(token=access_token)
-}
-r = requests.get('https://api.spotify.com/v1/me/player/currently-playing', headers=headers)
-r = r.json()
-print (r)
+    }
+    r = requests.get('https://api.spotify.com/v1/me/player/currently-playing', headers=headers)
+    r = r.json()
+    if r['currently_playing_type'] == 'ad':
+        return False
+    return True
+print (is_song_playing())
