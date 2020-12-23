@@ -1,13 +1,10 @@
-'''
-MAKE THE MUTING PART
-
-ALSO UPDATE THE ACCESS TOKEN EVERY MINUTE OR SOMETHING BECAUSE IT CHANGES (TO DO THIS, MAKE EVERYTHING INTO FUNCTIONS)
-'''
 import requests
 import spotipy.util as util
-CLIENT_ID = 'yourclientid'
-CLIENT_SECRET = 'yourclientsecret'
-username = 'yourusername' 
+import pyautogui
+import time
+CLIENT_ID = 'a455f73c6eac46428cb7f35d75e842f8'
+CLIENT_SECRET = '9bf9b5fce0b147dca5adb1758711e85d'
+username = 'Ahsan Kaleem' 
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-currently-playing'
 def is_song_playing():
@@ -25,4 +22,18 @@ def is_song_playing():
     if r['currently_playing_type'] == 'ad':
         return False
     return True
-print (is_song_playing())
+def mute():
+    pyautogui.press('volumemute')   
+def unmute(x):
+    if x % 2 == 0:
+        pyautogui.press('volumedown')
+    else:
+        pyautogui.press('volumeup')
+count = 0
+while True:
+    if is_song_playing() == False:
+        mute()
+        time.sleep(30)
+        unmute(count)
+        count += 1
+    time.sleep(1)
