@@ -2,8 +2,8 @@
 FIGURE OUT HOW TO GET THE ACCESS TOKEN AUTOMATICALLY
 '''
 import requests
-CLIENT_ID = 'a455f73c6eac46428cb7f35d75e842f8'
-CLIENT_SECRET = '9bf9b5fce0b147dca5adb1758711e85d'
+CLIENT_ID = 'yourclientid'   #hiding for privacy
+CLIENT_SECRET = 'yourclientsecret'   #hiding for privacy
 
 
 '''
@@ -18,7 +18,7 @@ access_token = auth_response_data['access_token']
 '''
 
 #access_token taken manually from the website (https://developer.spotify.com/console/get-users-currently-playing-track/?market=&additional_types=):
-access_token = 'BQCEdkJzrEkS-pNXRy6H1NAxF27aSCW5vaA3H2Zj4xMdIjLYPkykSs35_-t7ayvQJMD39WeXOJnzqZ-33iCjS_lXBfa74KWYuVx3hjdNfOLg2ka2VnqRG3WWPvqEpWv9hL99a6KW9qitBjvyta71KASG2P2f3h1oxDqp'
+access_token = 'youraccesstoken'   #hiding for privacy
 
 
 headers = {
