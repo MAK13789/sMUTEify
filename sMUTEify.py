@@ -6,9 +6,9 @@ ALSO UPDATE THE ACCESS TOKEN EVERY MINUTE OR SOMETHING BECAUSE IT CHANGES (TO DO
 WHEN PUTTING ON GITHUB, DON'T SHOW CLIENT ID, SECRET, AND ACCESS TOKEN PUBLICLY
 '''
 import requests
+import spotipy.util as util
 CLIENT_ID = 'yourclientid'   #hidden for privacy
 CLIENT_SECRET = 'yourclientsecret'  #hidden for privacy
-import spotipy.util as util
 username = 'yourusername'   #hidden for privacy 
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-currently-playing'
