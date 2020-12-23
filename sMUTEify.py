@@ -1,15 +1,13 @@
 '''
-MAKE EVERYTHING INTO FUNCTIONS PROBABLY, AND MAKE THE MUTING PART
+MAKE THE MUTING PART
 
 ALSO UPDATE THE ACCESS TOKEN EVERY MINUTE OR SOMETHING BECAUSE IT CHANGES (TO DO THIS, MAKE EVERYTHING INTO FUNCTIONS)
-
-WHEN PUTTING ON GITHUB, DON'T SHOW CLIENT ID, SECRET, AND ACCESS TOKEN PUBLICLY
 '''
 import requests
 import spotipy.util as util
-CLIENT_ID = 'a455f73c6eac46428cb7f35d75e842f8'
-CLIENT_SECRET = '9bf9b5fce0b147dca5adb1758711e85d'
-username = 'Ahsan Kaleem' 
+CLIENT_ID = 'yourclientid'
+CLIENT_SECRET = 'yourclientsecret'
+username = 'yourusername' 
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-currently-playing'
 def is_song_playing():
