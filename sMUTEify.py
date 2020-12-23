@@ -2,9 +2,9 @@ import requests
 import spotipy.util as util
 import pyautogui
 import time
-CLIENT_ID = 'a455f73c6eac46428cb7f35d75e842f8'
-CLIENT_SECRET = '9bf9b5fce0b147dca5adb1758711e85d'
-username = 'Ahsan Kaleem' 
+CLIENT_ID = 'yourclientid'   #can be obtained from spotify's developer website
+CLIENT_SECRET = 'yourclientsecret'   #can also be obtained from spotify's developer website
+username = 'yourusername' 
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-currently-playing'
 def is_song_playing():
