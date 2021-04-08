@@ -29,6 +29,7 @@ def unmute(x):
         pyautogui.press('volumedown')
     else:
         pyautogui.press('volumeup')
+'''
 count = 0
 while True:
     if is_song_playing() == False:
@@ -37,3 +38,15 @@ while True:
         unmute(count)
         count += 1
     time.sleep(1)
+'''
+count = 0
+is_muted = False
+while True:
+    time.sleep(1)
+    if is_song_playing() == False and is_muted == False:
+        count += 1
+        mute()
+        is_muted = True
+    if is_song_playing() == True and is_muted == True:
+        unmute(count)
+        is_muted = False
